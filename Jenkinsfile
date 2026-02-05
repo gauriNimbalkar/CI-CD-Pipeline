@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.10-slim'
+            reuseNode false
         }
     }
 
@@ -15,7 +16,7 @@ pipeline {
 
         stage('Docker Version') {
             steps {
-                sh "echo Docker is running on host (Windows)"
+                sh "echo Docker agent running"
             }
         }
 
